@@ -1,0 +1,11 @@
+some = ("bishkek", "nurlan", 29, 32, "alpha")
+
+letters = []
+numbers = []
+
+for i in some:
+   if str(i).isdigit():
+        numbers.append(i)
+
+    elif str(i).isalpha():
+        letters.append(i)
