@@ -1,45 +1,21 @@
-numbers = [1, 2, 3, 4, 5, 7]
-print(numbers[1:5])
+from random import choice
 
-ru = [1, 2, 3, 4,]
-eu = [5, 6, 7, 8, 9]
+variant = {
+    1: "камень",
+    2: "ножницы",
+    3: "бумага"
+}
 
-ru.extend(eu)
-print(ru)
+def variant_game(user_choise:int):
+    computer_choice = choice(list(variant))
+    if user_choise == computer_choice:
+        return f"ничья,  выбрал {variant[computer_choice]}"
+    
+    elif user_choise == 1 and computer_choice == 2 or user_choise == 2 and computer_choice == 3 or user_choise == 3 and computer_choice == 1:
+        return f"вы выйиграли,компьютер выбрал {variant[computer_choice]}"
+    
+    elif user_choise ==1 and computer_choice == 3 or user_choise == 2 and computer_choice == 1 or user_choise == 3 and computer_choice == 2:
+        return f"Вы проиграли, компьютер выбрал {variant[computer_choice]}"
 
-names = ['Jack', 'Jimmy', 'Jackson', 'Jhon', 'Jackson', 'Jhon',  'Jimmy', 'Jackson', 'Jhon','Jack', 'Jimmy', 'Jack', 'Jackson', 'Jhon', 'Jackson', 'Jhon','Jack', 'Jimmy', 'Jack', 'Jackson', 'Jhon',]
-names.append('oscar')
-print(names)
-if 'oscar' in names:
-   names.remove('oscar')
-print(names)
-
-pythonList = ["int", "str", "bool", "if", "else", "elif", "loop", "tuple", "list", "None", True, False]
-f_loop = pythonList.index('loop')
-pythonList.pop(f_loop)
-print(pythonList)
-
-a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-alfa = a[0] * a[1] * a[2] * a[3] * a[4] * a[5] * a[6] * a[7] * a[8] * a[9] * a[10]
-print(alfa)
-
-numbers = [0,2,4,7,1,8,0,-3,7,0,-2,4,0,0,-1,7,-43,0,8,-3,6,9]
-print(numbers[1:3])
-
-a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-for b in a:
-   if b>5:
-    print(b)
-
-spisok_1 = ('Lamborgini', 17, '4456', 2020, 'Paris', 'USA', 11, 23)
-numbers = []
-spisok_2 = ('Ferrari', 17, 4456, 2021, 'Paris', 'UK', 777, 23)
-letters = []
-for i in spisok_1:
-    if str(i).isdigit():
-        numbers.append(int(i))
-print(numbers)
-for y in spisok_2:
-    if str(y).isalpha():
-        letters.append(y)
-print(letters)
+    else:
+        return "выберите корректный ответ"
